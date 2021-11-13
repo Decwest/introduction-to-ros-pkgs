@@ -1,0 +1,7 @@
+<launch>
+    <arg name="mode" default="true"/>
+    <group if="$(arg mode)">
+        <node pkg="my_ros_tutorial" type="my_simple_publisher" name="my_simple_publisher" output="screen"/>
+        <node pkg="my_ros_tutorial" type="my_simple_subscriber" name="my_simple_subscriber" output="screen"/>
+    </group>
+</launch>

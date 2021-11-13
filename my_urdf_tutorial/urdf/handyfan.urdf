@@ -1,0 +1,42 @@
+<robot name="handyfan">
+
+  <link name="base_link"/>
+
+  <link name="body_link">
+    <visual>
+      <geometry>
+        <box size="0.04 0.02 0.20"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="white">
+        <color rgba="1.0 1.0 1.0 2.0"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="fan_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.05" length="0.02"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="white">
+        <color rgba="1.0 1.0 1.0 2.0"/>
+      </material>
+    </visual>
+  </link>
+  
+  <joint name="body_joint" type="fixed">
+    <parent link="base_link"/>
+    <child  link="body_link"/>
+    <origin xyz="0 0 0.10" rpy="0 0 0" />
+  </joint>
+
+  <joint name="fan_joint" type="continuous">
+    <parent link="body_link"/>
+    <child  link="fan_link"/>
+    <origin xyz="0.0 0.02 0.06" rpy="1.570796326794897 0 0" />
+    <axis xyz="0 0 1" />
+  </joint>
+
+</robot>

@@ -1,0 +1,8 @@
+<launch>
+    <arg name="pubstring" default="hello"/>
+    <arg name="looprate" default="5"/>
+    <node pkg="my_ros_tutorial" type="my_simple_publisher" name="my_simple_publisher" output="screen">
+        <param name="pub_string" value="$(arg pubstring)"/>
+        <param name="looprate" value="$(arg looprate)"/>
+    </node>
+</launch>

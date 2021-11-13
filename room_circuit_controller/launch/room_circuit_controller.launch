@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+  <include file="$(find my_urdf_tutorial)/launch/robot_simulation.launch" />
+  <node name="room_circuit_controller" pkg="room_circuit_controller" type="room_circuit_controller" output="screen">
+    <param name="velocity" value="2.0" />
+    <param name="angular_velocity" value="1.57" />
+    <param name="avoid_distance" value="0.5" />
+    <param name="avoid_angle" value="90" />
+  </node>
+</launch>

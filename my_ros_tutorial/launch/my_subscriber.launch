@@ -1,0 +1,7 @@
+<launch>
+    <include file="$(find my_ros_tutorial)/launch/my_publisher.launch">
+        <arg name="pubstring" value="hoge" />
+        <arg name="looprate" value="1" />
+    </include>
+    <node pkg="my_ros_tutorial" type="my_simple_subscriber" name="my_simple_subscriber" output="screen"/>
+</launch>

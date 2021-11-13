@@ -1,0 +1,41 @@
+<robot name="justaway">
+
+  <link name="base_link"/>
+
+  <link name="body_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.2" length="0.6"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="red">
+        <color rgba="1.0 0.0 0.0 2.0"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="head_link">
+    <visual>
+      <geometry>
+        <sphere radius="0.15"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="red">
+        <color rgba="1.0 0.0 0.0 2.0"/>
+      </material>
+    </visual>
+  </link>
+  
+  <joint name="body_joint" type="fixed">
+    <parent link="base_link"/>
+    <child  link="body_link"/>
+    <origin xyz="0 0 0.30" rpy="0 0 0" />
+  </joint>
+
+  <joint name="head_joint" type="fixed">
+    <parent link="body_link"/>
+    <child  link="head_link"/>
+    <origin xyz="0 0 0.30" rpy="0 0 0" />
+  </joint>
+
+</robot>
